@@ -1,0 +1,59 @@
+<!-- <h1>Update student</h1>
+<select (change)="getSelectedValue($event)">
+<option *ngFor="let studentId of studentData" value="{{studentId.id}}">{{studentId.rollNo}}</option>
+</select>
+<form [formGroup]="updateStudent"(ngSubmit)="updateStudentDetails(updateStudent.value)">
+
+    <input type="hidden" formControlName="id" [(ngModel)]="student[0].id"><br>
+    <input type="text" formControlName="name" [(ngModel)]="student[0].name"> <br>
+    <input type="email" formControlName="email" [(ngModel)]="student[0].email"><br>
+    <input type="number" formControlName="age"  [(ngModel)]="student[0].age"><br>
+    <input type="radio" formControlName="isMale" value="true" checked>Male 
+    <input type="radio" formControlName="isMale" value="false">Female<br>
+    <input type="number" formControlName="rollNo" [(ngModel)]="student[0].rollNo"><br>
+    <input type="date" formControlName="date" [(ngModel)]="student[0].date"><br>
+
+    <button>update</button>
+ 
+</form> -->
+
+  <div class="container mt-4">
+    <h1 class="text-center">Update Student</h1>
+    
+    <div class="form-group">
+      <select class="form-control" (change)="getSelectedValue($event)">
+        <option *ngFor="let studentId of studentData" value="{{studentId.id}}">{{studentId.rollNo}}</option>
+      </select>
+    </div>
+
+    <form [formGroup]="updateStudent" (ngSubmit)="updateStudentDetails(updateStudent.value)">
+      <div class="form-group">
+        <input type="hidden" formControlName="id" [(ngModel)]="student[0].id">
+      </div>
+      <div class="form-group">
+        <input type="text" formControlName="name" [(ngModel)]="student[0].name" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="email" formControlName="email" [(ngModel)]="student[0].email" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="number" formControlName="age" [(ngModel)]="student[0].age" class="form-control">
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" formControlName="isMale" value="true" checked id="maleRadio">
+        <label class="form-check-label" for="maleRadio">Male</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" formControlName="isMale" value="false" id="femaleRadio">
+        <label class="form-check-label" for="femaleRadio">Female</label>
+      </div>
+      <div class="form-group">
+        <input type="number" formControlName="rollNo" [(ngModel)]="student[0].rollNo" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="date" formControlName="date" [(ngModel)]="student[0].date" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+
